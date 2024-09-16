@@ -1,2 +1,1 @@
-# Movie Recommendation Based On Emotion
- Recommendation Based on Emotion along with genre.
+Movie Recommendation Based on Emotion prefers movies based on genre which is closely related to human emotions.
