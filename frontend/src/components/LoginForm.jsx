@@ -1,6 +1,6 @@
 import { useState } from "react";
 import api from "../api";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ACCESS_TOKENS, REFRESH_TOKENS } from "../constants";
 import "../styles/Form.css"
 import LoadingIndicator from "./LoadingIndicator";
@@ -20,12 +20,15 @@ export const LoginForm = ({ route, method }) => {
             if (method === "login") {
                 localStorage.setItem(ACCESS_TOKENS, res.data.access)
                 localStorage.setItem(REFRESH_TOKENS, res.data.refresh)
-                navigate("/")
+                localStorage.setItem("user", username)
+                navigate("/");
             }
-            else navigate("/login")
+            else
+                navigate("/login");
             
         }
-        catch (error) { alert(error)
+        catch (error) {
+            alert(error)
         }
         finally {
             setLoading(false)
@@ -33,13 +36,14 @@ export const LoginForm = ({ route, method }) => {
     }
     
     return (
-        <form onSubmit={handleSubmit} className="form-container">
+        <form onSubmit={handleSubmit} className="form-container" align="center">
             <h1>{name}</h1>
             <input
                 className="form-input"
                 type="text" value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="Username"
+                autoComplete="current-username"
                 required    
             />
             <input
@@ -49,6 +53,7 @@ export const LoginForm = ({ route, method }) => {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
                 required
+                autoComplete="current-password"
             />
             {loading && <LoadingIndicator />}
             <button className="form-button" type="submit">{ name }</button>

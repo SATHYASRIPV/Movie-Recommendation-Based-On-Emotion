@@ -1,15 +1,18 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Form } from '../components/Form'
+import { Link, useNavigate } from 'react-router-dom'
+import '../styles/Home.css';
 
 export const Home = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
-    <div>
+    <div align="center">
       <h1>Home</h1>
-      {/* <a href="" onClick={<Navigate to="/login">Login</Navigate>} /> */}
-      {/* <a href="" onClick={<Navigate to="/register">Register</Navigate>} /> */}
-      <button onClick={()=>navigate("/form")}>Form</button>
-    </div>
+      <Link to="/login" style={{ marginRight: '10px' }}>Login</Link>
+      <Link to="/register">Register</Link>
+      <br />
+      <button onClick={() => navigate('/form')} style={{ marginTop: '20px' }}>
+        Go to Form
+      </button>
+      </div>
   )
 }

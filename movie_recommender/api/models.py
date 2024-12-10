@@ -44,6 +44,7 @@ class Recommendation(models.Model):
         return f'{self.user.username} - {self.movie.title}'
     
 class EmotionPreference(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     emotion = models.CharField(max_length=20)
     genre = models.CharField(max_length=20)
 

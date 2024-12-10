@@ -43,19 +43,22 @@ class RecommendationView(generics.GenericAPIView):
     
 class SavePreferencesView(APIView):
 
+    permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
+        user = request.user
         preferences = request.data.get('preferences', [])
         errors = []
-        
+
         for pref in preferences:
-            serializer = EmotionPreferenceSerializer(data=pref)
-            if serializer.is_valid():
-                serializer.save()
-            else:
-                # Collect errors if any preference fails validation
-                errors.append(serializer.errors)
-        
+            for genre in pref.get('genres', []):
+                data = {'emotion': pref['emotion'], 'genre': genre, 'user': user.id}
+                serializer = EmotionPreferenceSerializer(data=data)
+                if serializer.is_valid():
+                    serializer.save()
+                else:
+                    errors.append(serializer.errors)
+
         if errors:
             return Response(errors, status=status.HTTP_400_BAD_REQUEST)
-        
+
         return Response({"message": "Preferences saved successfully"}, status=status.HTTP_201_CREATED)

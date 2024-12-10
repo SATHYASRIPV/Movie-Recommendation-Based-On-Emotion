@@ -28,9 +28,10 @@ class RecommendationSerializer(serializers.Serializer):
         model = Recommendation
         fields = '__all__'
 
+
 class EmotionPreferenceSerializer(serializers.ModelSerializer):
     class Meta:
         model = EmotionPreference
-        fields = ['emotion', 'genre']
+        fields = ['user', 'emotion', 'genre']
 
     
