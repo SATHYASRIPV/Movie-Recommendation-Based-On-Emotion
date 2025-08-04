@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { validateToken } from './ProtectedRoute';
 import { ACCESS_TOKENS } from '../constants';
 import { useNavigate } from 'react-router-dom';
@@ -10,17 +10,32 @@ const emotions = [
   'Surprised',
   'Fearful',
   'Disgusted',
-  'Neutral',
+  'Neutral'
 ];
 
 const genres = [
-  'Action', 'Adventure', 'Comedy', 'Family', 'Fantasy',
-  'Horror', 'Romance', 'Sci-Fi', 'Thriller',
-  'Animation', 'Drama', 'Crime', 'Historical', 'Others',
+  'Action',
+  'Adventure',
+  'Comedy',
+  'Family',
+  'Fantasy',
+  'Horror',
+  'Romance',
+  'Sci-Fi',
+  'Thriller',  
+  'Animation',
+  'Drama',
+  'Crime',
+  'Historical',
+  'Others'
 ];
 
 export const Form = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const navigate = useNavigate();
+  const token = localStorage.getItem(ACCESS_TOKENS);
   const [selectedGenres, setSelectedGenres] = useState(
     emotions.reduce((acc, emotion) => {
       acc[emotion] = { genres: [], other: '' };
@@ -34,6 +49,7 @@ export const Form = () => {
       const updatedGenres = isSelected
         ? prev[emotion].genres.filter((g) => g !== genre)
         : [...prev[emotion].genres, genre];
+        
 
       return {
         ...prev,
@@ -68,17 +84,17 @@ export const Form = () => {
       emotion,
       genres: genres.includes('Others') ? [...genres.filter((g) => g !== 'Others'), other] : genres,
     }));
-
+    console.log(preferences);
     try {
       const response = await fetch('http://127.0.0.1:8000/api/emotion-preferences/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem(ACCESS_TOKENS)}`,
+          'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify({ preferences: preferences, user }),
+        
       });
-
       if (!response.ok) {
         const errorData = await response.json();
         console.error('Failed to save preferences:', errorData);
@@ -92,72 +108,64 @@ export const Form = () => {
       alert('An error occurred while saving preferences.');
     }
   };
-
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} >
       <h2>Choose Your Movie Preferences Based on Your Emotions</h2>
-      {emotions.map((emotion) => (
-        <div key={emotion} style={{ marginBottom: '20px' }}>
-          {/* Emotion label */}
-          <label
-            style={{
-              display: 'block',
-              marginBottom: '10px',
-              fontWeight: 'bold',
-            }}
-          >
-            When you are feeling <span style={{ textTransform: 'capitalize' }}>{emotion.toLowerCase()}</span>, what kind of movies do you prefer?
+      <div style={{ maxHeight: '400px'}}>
+      {emotions.map((emotion, i) => (
+        <div key={i} style={{ marginBottom: '30px', padding: '10px', overflow: 'hidden' }}>
+          <label>
+            When you are feeling <span style={{ textTransform: 'capitalize' }}>{emotion}</span>, what kind of movies do you prefer?
           </label>
-
-          {/* Scrollable genre list */}
           <div
-            style={{
-              maxHeight: '150px', // Set fixed height for the scroll container
-              overflowY: 'scroll', // Enable vertical scrolling
-              border: '1px solid #ccc',
-              padding: '10px',
-              width: '300px', // Set fixed width for uniformity
-            }}
-          >
-            {genres.map((genre) => (
-              <div
-                key={`${emotion}-${genre}`}
                 style={{
-                  marginBottom: '10px',
-                  display: 'flex',
-                  alignItems: 'center',
+                        maxHeight: '200px',
+                        overflowY: 'auto',
+                        border: '1px solid #ccc',
+                        padding: '10px',
+                        boxSizing: 'border-box',
                 }}
-              >
-                <input
-                  type="checkbox"
-                  id={`${emotion}-${genre}`}
-                  checked={selectedGenres[emotion].genres.includes(genre)}
-                  onChange={() => handleGenreChange(emotion, genre)}
-                  style={{ marginRight: '8px' }}
-                />
-                <label htmlFor={`${emotion}-${genre}`}>{genre}</label>
-              </div>
-            ))}
+            >
+              {genres.map((genre) => (
+                <div key={`${i}-${genre}`}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'left',
+                    gap: '20px',
+                    marginBottom: '10px',
+                  }}
+                >
+                  
+                  <input
+                    type="checkbox"
+                    id={`${i}-${genre}`}
+                    checked={selectedGenres[emotion]?.genres.includes(genre) || false}
+                    onChange={() => handleGenreChange(emotion, genre)}
+                    style={{
+                      width: '16px',
+                      height: '16px',
+                      alignContent: 'left',
+                    }}
+                  />
+                  <label htmlFor={`${i}-${genre}`} style={{ whiteSpace: 'discard-before' }}>{genre}</label>
+                </div>
+              ))}
           </div>
-
-          {/* Other genre input */}
-          {selectedGenres[emotion].genres.includes('Others') && (
+          {selectedGenres[emotion]?.genres.includes('Others') && (
             <input
               type="text"
               placeholder="Enter your preferred genre"
-              value={selectedGenres[emotion].other}
+              value={selectedGenres[emotion]?.other || ''}
               onChange={(e) => handleOtherGenreChange(emotion, e.target.value)}
-              style={{
-                marginTop: '10px',
-                display: 'block',
-                width: '100%',
-              }}
               required
             />
           )}
+      </div>
+))}
+
+        <button type="submit">Submit</button>
         </div>
-      ))}
-      <button type="submit">Submit</button>
     </form>
   );
 };
+

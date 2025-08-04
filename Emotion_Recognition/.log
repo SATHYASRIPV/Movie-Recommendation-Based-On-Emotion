@@ -1,0 +1,120 @@
+2024-08-04 17:51:44,434 [8880] DEBUG    root:75: [JupyterRequire] Loading Jupyter Require extension.
+2024-08-04 17:51:44,434 [8880] DEBUG    root:93: [JupyterRequire] Initializing comms.
+2024-08-04 17:51:44,434 [8880] INFO     root:247: [JupyterRequire] Initializing comms.
+2024-08-04 17:51:44,443 [8880] DEBUG    root:195: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
+2024-08-04 17:51:44,443 [8880] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
+2024-08-04 17:51:44,443 [8880] DEBUG    root:97: [JupyterRequire] Registering comm targets.
+2024-08-04 17:51:45,252 [8880] DEBUG    root:75: [JupyterRequire] Loading Jupyter Require extension.
+2024-08-04 17:51:45,291 [8880] DEBUG    root:93: [JupyterRequire] Initializing comms.
+2024-08-04 17:51:45,299 [8880] INFO     root:247: [JupyterRequire] Initializing comms.
+2024-08-04 17:51:45,309 [8880] DEBUG    root:195: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
+2024-08-04 17:51:45,311 [8880] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
+2024-08-04 17:51:45,311 [8880] DEBUG    root:97: [JupyterRequire] Registering comm targets.
+2024-08-04 17:51:58,634 [8880] DEBUG    tensorflow:34: [JupyterRequire] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2024-08-04 17:52:00,483 [8880] DEBUG    h5py._conv:47: [JupyterRequire] Creating converter from 7 to 5
+2024-08-04 17:52:00,486 [8880] DEBUG    h5py._conv:47: [JupyterRequire] Creating converter from 5 to 7
+2024-08-04 17:52:00,486 [8880] DEBUG    h5py._conv:47: [JupyterRequire] Creating converter from 7 to 5
+2024-08-04 17:52:00,486 [8880] DEBUG    h5py._conv:47: [JupyterRequire] Creating converter from 5 to 7
+2024-08-04 17:52:00,669 [8880] WARNING  py.warnings:109: [JupyterRequire] C:\ProgramData\Anaconda3\lib\site-packages\scipy\__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+
+2024-08-04 17:52:05,989 [8880] INFO     numexpr.utils:157: [JupyterRequire] NumExpr defaulting to 8 threads.
+2024-08-04 17:52:36,438 [8880] WARNING  py.warnings:109: [JupyterRequire] C:\ProgramData\Anaconda3\lib\site-packages\keras\src\trainers\data_adapters\py_dataset_adapter.py:121: UserWarning: Your `PyDataset` class should call `super().__init__(**kwargs)` in its constructor. `**kwargs` can include `workers`, `use_multiprocessing`, `max_queue_size`. Do not pass these arguments to `fit()`, as they will be ignored.
+  self._warn_if_super_not_called()
+
+2024-08-04 17:57:57,745 [8880] WARNING  py.warnings:109: [JupyterRequire] C:\ProgramData\Anaconda3\lib\contextlib.py:137: UserWarning: Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches. You may need to use the `.repeat()` function when building your dataset.
+  self.gen.throw(typ, value, traceback)
+
+2024-08-04 18:10:33,853 [2276] DEBUG    root:75: [JupyterRequire] Loading Jupyter Require extension.
+2024-08-04 18:10:33,853 [2276] DEBUG    root:93: [JupyterRequire] Initializing comms.
+2024-08-04 18:10:33,853 [2276] INFO     root:247: [JupyterRequire] Initializing comms.
+2024-08-04 18:10:33,853 [2276] DEBUG    root:195: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
+2024-08-04 18:10:33,853 [2276] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
+2024-08-04 18:10:33,853 [2276] DEBUG    root:97: [JupyterRequire] Registering comm targets.
+2024-08-04 18:10:34,675 [2276] DEBUG    root:75: [JupyterRequire] Loading Jupyter Require extension.
+2024-08-04 18:10:34,678 [2276] DEBUG    root:93: [JupyterRequire] Initializing comms.
+2024-08-04 18:10:34,678 [2276] INFO     root:247: [JupyterRequire] Initializing comms.
+2024-08-04 18:10:34,684 [2276] DEBUG    root:195: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
+2024-08-04 18:10:34,684 [2276] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
+2024-08-04 18:10:34,684 [2276] DEBUG    root:97: [JupyterRequire] Registering comm targets.
+2024-08-04 18:11:35,104 [2276] DEBUG    tensorflow:34: [JupyterRequire] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2024-08-04 18:11:36,909 [2276] DEBUG    h5py._conv:47: [JupyterRequire] Creating converter from 7 to 5
+2024-08-04 18:11:36,909 [2276] DEBUG    h5py._conv:47: [JupyterRequire] Creating converter from 5 to 7
+2024-08-04 18:11:36,909 [2276] DEBUG    h5py._conv:47: [JupyterRequire] Creating converter from 7 to 5
+2024-08-04 18:11:36,909 [2276] DEBUG    h5py._conv:47: [JupyterRequire] Creating converter from 5 to 7
+2024-08-04 18:11:37,082 [2276] WARNING  py.warnings:109: [JupyterRequire] C:\ProgramData\Anaconda3\lib\site-packages\scipy\__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+
+2024-08-04 18:11:41,418 [2276] INFO     numexpr.utils:157: [JupyterRequire] NumExpr defaulting to 8 threads.
+2024-08-04 18:11:45,132 [2276] WARNING  py.warnings:109: [JupyterRequire] C:\ProgramData\Anaconda3\lib\site-packages\keras\src\layers\convolutional\base_conv.py:107: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(activity_regularizer=activity_regularizer, **kwargs)
+
+2024-08-04 18:17:16,621 [2276] WARNING  py.warnings:109: [JupyterRequire] C:\ProgramData\Anaconda3\lib\site-packages\keras\src\trainers\data_adapters\py_dataset_adapter.py:121: UserWarning: Your `PyDataset` class should call `super().__init__(**kwargs)` in its constructor. `**kwargs` can include `workers`, `use_multiprocessing`, `max_queue_size`. Do not pass these arguments to `fit()`, as they will be ignored.
+  self._warn_if_super_not_called()
+
+2024-08-04 18:27:36,729 [2276] WARNING  py.warnings:109: [JupyterRequire] C:\ProgramData\Anaconda3\lib\contextlib.py:137: UserWarning: Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches. You may need to use the `.repeat()` function when building your dataset.
+  self.gen.throw(typ, value, traceback)
+
+2024-08-04 18:28:07,930 [2276] WARNING  py.warnings:109: [JupyterRequire] C:\ProgramData\Anaconda3\lib\site-packages\keras\src\callbacks\model_checkpoint.py:206: UserWarning: Can save best model only with val_acc available, skipping.
+  self._save_model(epoch=epoch, batch=None, logs=logs)
+
+2024-08-04 21:15:45,599 [2276] DEBUG    root:75: [JupyterRequire] Loading Jupyter Require extension.
+2024-08-04 21:15:45,599 [2276] DEBUG    root:93: [JupyterRequire] Initializing comms.
+2024-08-04 21:15:45,599 [2276] INFO     root:247: [JupyterRequire] Initializing comms.
+2024-08-04 21:15:45,603 [2276] DEBUG    root:195: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
+2024-08-04 21:15:45,608 [2276] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
+2024-08-04 21:15:45,608 [2276] DEBUG    root:97: [JupyterRequire] Registering comm targets.
+2024-08-04 21:15:46,145 [2276] DEBUG    root:75: [JupyterRequire] Loading Jupyter Require extension.
+2024-08-04 21:15:46,145 [2276] DEBUG    root:93: [JupyterRequire] Initializing comms.
+2024-08-04 21:15:46,145 [2276] INFO     root:247: [JupyterRequire] Initializing comms.
+2024-08-04 21:15:46,148 [2276] DEBUG    root:195: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
+2024-08-04 21:15:46,148 [2276] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
+2024-08-04 21:15:46,150 [2276] DEBUG    root:97: [JupyterRequire] Registering comm targets.
+2024-08-04 21:15:46,679 [2276] DEBUG    root:75: [JupyterRequire] Loading Jupyter Require extension.
+2024-08-04 21:15:46,679 [2276] DEBUG    root:93: [JupyterRequire] Initializing comms.
+2024-08-04 21:15:46,679 [2276] INFO     root:247: [JupyterRequire] Initializing comms.
+2024-08-04 21:15:46,687 [2276] DEBUG    root:195: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
+2024-08-04 21:15:46,688 [2276] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
+2024-08-04 21:15:46,688 [2276] DEBUG    root:97: [JupyterRequire] Registering comm targets.
+2024-08-04 21:15:47,218 [2276] DEBUG    root:75: [JupyterRequire] Loading Jupyter Require extension.
+2024-08-04 21:15:47,218 [2276] DEBUG    root:93: [JupyterRequire] Initializing comms.
+2024-08-04 21:15:47,218 [2276] INFO     root:247: [JupyterRequire] Initializing comms.
+2024-08-04 21:15:47,225 [2276] DEBUG    root:195: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
+2024-08-04 21:15:47,227 [2276] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
+2024-08-04 21:15:47,227 [2276] DEBUG    root:97: [JupyterRequire] Registering comm targets.
+2024-08-04 21:15:47,760 [2276] DEBUG    root:75: [JupyterRequire] Loading Jupyter Require extension.
+2024-08-04 21:15:47,760 [2276] DEBUG    root:93: [JupyterRequire] Initializing comms.
+2024-08-04 21:15:47,760 [2276] INFO     root:247: [JupyterRequire] Initializing comms.
+2024-08-04 21:15:47,764 [2276] DEBUG    root:195: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
+2024-08-04 21:15:47,766 [2276] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
+2024-08-04 21:15:47,766 [2276] DEBUG    root:97: [JupyterRequire] Registering comm targets.
+2024-08-04 21:15:48,296 [2276] DEBUG    root:75: [JupyterRequire] Loading Jupyter Require extension.
+2024-08-04 21:15:48,296 [2276] DEBUG    root:93: [JupyterRequire] Initializing comms.
+2024-08-04 21:15:48,296 [2276] INFO     root:247: [JupyterRequire] Initializing comms.
+2024-08-04 21:15:48,300 [2276] DEBUG    root:195: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
+2024-08-04 21:15:48,303 [2276] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
+2024-08-04 21:15:48,303 [2276] DEBUG    root:97: [JupyterRequire] Registering comm targets.
+2024-08-04 21:15:48,845 [2276] DEBUG    root:75: [JupyterRequire] Loading Jupyter Require extension.
+2024-08-04 21:15:48,845 [2276] DEBUG    root:93: [JupyterRequire] Initializing comms.
+2024-08-04 21:15:48,845 [2276] INFO     root:247: [JupyterRequire] Initializing comms.
+2024-08-04 21:15:48,845 [2276] DEBUG    root:195: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
+2024-08-04 21:15:48,845 [2276] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
+2024-08-04 21:15:48,861 [2276] DEBUG    root:97: [JupyterRequire] Registering comm targets.
+2024-08-04 21:22:50,969 [2276] DEBUG    root:75: [JupyterRequire] Loading Jupyter Require extension.
+2024-08-04 21:22:50,970 [2276] DEBUG    root:93: [JupyterRequire] Initializing comms.
+2024-08-04 21:22:50,970 [2276] INFO     root:247: [JupyterRequire] Initializing comms.
+2024-08-04 21:22:50,970 [2276] DEBUG    root:195: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
+2024-08-04 21:22:50,975 [2276] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
+2024-08-04 21:22:50,976 [2276] DEBUG    root:97: [JupyterRequire] Registering comm targets.
+2024-08-05 12:38:04,017 [18344] DEBUG    root:75: [JupyterRequire] Loading Jupyter Require extension.
+2024-08-05 12:38:04,017 [18344] DEBUG    root:93: [JupyterRequire] Initializing comms.
+2024-08-05 12:38:04,017 [18344] INFO     root:247: [JupyterRequire] Initializing comms.
+2024-08-05 12:38:04,023 [18344] DEBUG    root:195: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
+2024-08-05 12:38:04,023 [18344] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
+2024-08-05 12:38:04,023 [18344] DEBUG    root:97: [JupyterRequire] Registering comm targets.
+2024-08-05 12:38:04,552 [18344] DEBUG    root:75: [JupyterRequire] Loading Jupyter Require extension.
+2024-08-05 12:38:04,556 [18344] DEBUG    root:93: [JupyterRequire] Initializing comms.
+2024-08-05 12:38:04,556 [18344] INFO     root:247: [JupyterRequire] Initializing comms.
+2024-08-05 12:38:04,559 [18344] DEBUG    root:195: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
+2024-08-05 12:38:04,559 [18344] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
+2024-08-05 12:38:04,562 [18344] DEBUG    root:97: [JupyterRequire] Registering comm targets.

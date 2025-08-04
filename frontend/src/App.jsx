@@ -4,6 +4,7 @@ import { Login } from "./pages/Login"
 import { Register } from "./pages/Register"
 import { Home } from "./pages/Home"
 import { NotFound } from "./pages/NotFound"
+import { Emotion } from "./pages/Emotion"
 import { ProtectedRoute } from "./components/ProtectedRoute"
 import { Form } from "./components/Form"
 
@@ -22,7 +23,6 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        
         <Route
           exact path="/"
           element={
@@ -35,6 +35,8 @@ function App() {
         <Route path="/register" element={<RegisterAndLogout />} />
         <Route path="*" element={<NotFound />}></Route>
         <Route path="/form" element={<Form />} />
+        <Route path="/emotion" element={<Emotion />}></Route>
+        <Route path="/protectedroute" element={<ProtectedRoute />}></Route>
       </Routes>
     </BrowserRouter>
   )

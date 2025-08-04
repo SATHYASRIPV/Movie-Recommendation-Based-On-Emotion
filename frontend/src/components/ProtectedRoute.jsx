@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import {jwtDecode} from "jwt-decode"; 
 import axios from "axios";
 import { ACCESS_TOKENS, REFRESH_TOKENS } from "../constants";
 
 const refreshAccessToken = async () => {
+  const navigate = useNavigate();
   const refreshToken = localStorage.getItem(REFRESH_TOKENS);
   if (!refreshToken) {
     console.error("No refresh token available.");
@@ -15,6 +16,7 @@ const refreshAccessToken = async () => {
       refresh: refreshToken,
     });
     localStorage.setItem(ACCESS_TOKENS, response.data.access);
+    navigate('/login');
     return true;
   } catch (error) {
     console.error("Failed to refresh token:", error);
@@ -24,9 +26,6 @@ const refreshAccessToken = async () => {
 
 export const ProtectedRoute = ({ children }) => {
   const [isAuthorized, setIsAuthorized] = useState(null);
-
-  
-
   const checkAuth = async () => {
     const isValid = await validateToken();
     setIsAuthorized(isValid);
@@ -39,7 +38,6 @@ export const ProtectedRoute = ({ children }) => {
   if (isAuthorized === null) {
     return <div>Loading...</div>;
   }
-
   return isAuthorized ? children : <Navigate to="/login" />;
 };
 
@@ -54,6 +52,7 @@ export const validateToken = async () => {
     const currentTime = Date.now() / 1000;
     if (decodedToken.exp < currentTime) {
       console.warn("Access token has expired. Attempting to refresh...");
+      
       return await refreshAccessToken();
     }
     return true;

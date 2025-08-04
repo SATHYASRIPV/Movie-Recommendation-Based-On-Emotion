@@ -13,6 +13,7 @@ export const Home = () => {
       <button onClick={() => navigate('/form')} style={{ marginTop: '20px' }}>
         Go to Form
       </button>
+      <button onClick={() => navigate('/emotion')} style={{ marginTop: '20px' }}>Click Emotion</button>
       </div>
   )
 }
